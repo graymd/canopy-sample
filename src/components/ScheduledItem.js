@@ -9,7 +9,7 @@ const ScheduledItem = ({
     <li
       className={`ScheduledItem ${ item.completed ? "completed" : "" }`}
       id={item.id}
-      onClick={clickHandler}
+      onClick={item.completed ? '' : clickHandler}
     >
       { item.completed
         ? <i className="fa-li fa fa-check-circle-o"></i>
