@@ -6,7 +6,7 @@ const Comment = ({ item }) => {
     <li
       className="Comment type"
     >
-      <h4>{item.author} says...</h4>
+      <h4>{item.type === 'tech' ? `Technician` : `Customer`} - {item.author} says...</h4>
       <p>{item.body}</p>
     </li>
   );
