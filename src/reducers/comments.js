@@ -1,3 +1,5 @@
+import omit from 'lodash/omit';
+
 const initialState = {
   1: {
     author: "Travis N",
@@ -21,6 +23,10 @@ const initialState = {
 
 const comments = (state = initialState, action) => {
   switch (action.type) {
+    case 'REMOVE_COMMENT':
+    return {
+      ...omit(state, action.id)
+    }
   default:
     return state;
   }
