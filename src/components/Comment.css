@@ -1,10 +1,18 @@
 .Comment { margin-bottom: 0.5em; }
 
-.Comment > h4 {
+.Comment > span > h4 {
   font-weight: 500;
   margin: 0;
 }
-.Comment > p {
+.Comment > span > p {
   font-weight: 200;
   margin: 0;
+}
+
+.Comment > span > .editInputText {
+    width: 100%;
+    font-weight: 200;
+    margin: 0;
+    border: none;
+    background: inherit;
 }
