@@ -36,7 +36,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   updateComment: (itemId, event) => {
-    dispatch(updateComment(itemId, event.target.value))
+    dispatch(updateComment(itemId, {body: event.target.value}))
   }
 });
 

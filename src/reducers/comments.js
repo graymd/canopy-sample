@@ -1,5 +1,3 @@
-// import omit from './lodash/omit';
-
 const initialState = {
   1: {
     author: "Travis N",
@@ -21,12 +19,18 @@ const initialState = {
   }
 };
 
+const mergedArgs = (state, itemId, args) => {
+  const prev = state[itemId] || {}
+  return { ...prev, ...args }
+}
+
 const comments = (state = initialState, action) => {
   switch (action.type) {
   case 'UPDATE_COMMENT':
-    const updatedState = {...state};
-    updatedState[action.itemId].body = action.updatedComment;
-    return updatedState;
+    return {
+      ...state,
+      [action.itemId]: mergedArgs(state, action.itemId, action.args)
+    };
   default:
     return state;
   }

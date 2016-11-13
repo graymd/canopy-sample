@@ -18,13 +18,13 @@ describe('actions', () => {
   describe('comments', () => {
     it('should create an action to update a comment', () => {
       const itemId = 1;
-      const updatedComment = 'updated text';
+      const args = {body: 'updated text'};
       const expectedAction = {
         itemId,
-        updatedComment,
+        args,
         type: types.UPDATE_COMMENT,
       };
-      expect(actions.updateComment(itemId, updatedComment)).toEqual(expectedAction);
+      expect(actions.updateComment(itemId, args)).toEqual(expectedAction);
     });
   });
 });

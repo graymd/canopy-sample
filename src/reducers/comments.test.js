@@ -34,7 +34,7 @@ describe('comments reducer', () => {
      const prevState = initialState;
      const action = {
        itemId: 1,
-       updatedComment: "updated text",
+       args: {body: "updated text"},
        type: 'UPDATE_COMMENT',
      };
      const nextState = {

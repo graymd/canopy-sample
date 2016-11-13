@@ -6,8 +6,8 @@ export const updateScheduledItem = (itemId, args) => ({
   type: actionTypes.UPDATE_SCHEDULED_ITEM,
 });
 
-export const updateComment = (itemId, updatedComment) => ({
+export const updateComment = (itemId, args) => ({
+  args,
   itemId,
-  updatedComment,
   type: actionTypes.UPDATE_COMMENT,
 });
