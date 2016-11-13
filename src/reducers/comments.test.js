@@ -29,4 +29,35 @@ describe('comments reducer', () => {
 
     expect(reducer(prevState, action)).toEqual(initialState);
   });
+
+  it('should handle UPDATE_COMMENT', () => {
+     const prevState = initialState;
+     const action = {
+       itemId: 1,
+       updatedComment: "updated text",
+       type: 'UPDATE_COMMENT',
+     };
+     const nextState = {
+       1: {
+         author: "Travis N",
+         body: "updated text",
+         id: 1,
+         type: "tech",
+       },
+       2: {
+         author: "Barry",
+         body: "I thought you we're going to trim the trees. I am displeased.",
+         id: 2,
+         type: "customer",
+       },
+       3: {
+         author: "Travis N",
+         body: "Wat!?",
+         id: 3,
+         type: "tech",
+       },
+     };
+
+     expect(reducer(prevState, action)).toEqual(nextState);
+   });
 });

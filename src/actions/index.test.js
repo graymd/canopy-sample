@@ -15,4 +15,16 @@ describe('actions', () => {
       expect(actions.updateScheduledItem(itemId, args)).toEqual(expectedAction);
     });
   });
+  describe('comments', () => {
+    it('should create an action to update a comment', () => {
+      const itemId = 1;
+      const updatedComment = 'updated text';
+      const expectedAction = {
+        itemId,
+        updatedComment,
+        type: types.UPDATE_COMMENT,
+      };
+      expect(actions.updateComment(itemId, updatedComment)).toEqual(expectedAction);
+    });
+  });
 });
