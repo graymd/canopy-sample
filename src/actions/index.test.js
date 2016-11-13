@@ -15,4 +15,15 @@ describe('actions', () => {
       expect(actions.updateScheduledItem(itemId, args)).toEqual(expectedAction);
     });
   });
+
+  describe('comments', () => {
+    it('should create an action to remove a comment', () => {
+      const id = 1;
+      const expectedAction = {
+        id,
+        type: types.REMOVE_COMMENT,
+      };
+      expect(actions.removeComment(id)).toEqual(expectedAction);
+    });
+  });
 });
